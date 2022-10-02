@@ -146,7 +146,7 @@ export class SignUpPage extends PureComponent {
 
         try{
             console.log("running");
-             await axios.post(post_url, {
+             await axios.post('/api/userSignUp', {
               firstname: this.state.firstname,
               lastname: this.state.lastname
             })
