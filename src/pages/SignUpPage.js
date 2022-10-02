@@ -141,7 +141,7 @@ export class SignUpPage extends PureComponent {
 
     // Step 3 On Sign Up Click
     async MasterSignUp(){
-        const post_url = 'https://ec2-34-201-91-232.compute-1.amazonaws.com:5001/api/userSignUp';
+        const post_url = 'http://ec2-34-201-91-232.compute-1.amazonaws.com:5000/api/userSignUp';
         const post = '/.netlify/functions/backend';
 
         try{
