@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  
+}
+
+body {
+  margin: 0;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+  font-family: "Jose";
+}
+
+#comptext {
+  font-family: "MoskMedium";
+}
+
+#cards {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#navbar {
+  box-shadow: 0px .5px 3px 0px rgb(0, 0, 0);
+  border-bottom: 1px solid rgba(45, 43, 43, 0.25);
+  transition: top 0.3s;
+  overflow: hidden;
+}
+
+#placement {
+  
+
+  top:28rem;
+}
+
+#box_temp {
+  height: 36rem;
+}
+
+.custom-shape-divider-bottom-1662343745 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1662343745 svg {
+  position: relative;
+  display: block;
+  width: calc(144% + 1.3px);
+  height: 181px;
+}
+
+.custom-shape-divider-bottom-1662343745 .shape-fill {
+  fill: #8A6E6E66;
+}
+
+.custom-shape-divider-bottom-1662344528 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1662344528 svg {
+  position: relative;
+  display: block;
+  width: calc(144% + 1.3px);
+  height: 47px;
+}
+
+.custom-shape-divider-bottom-1662344528 .shape-fill {
+  fill: #111827;
+}
+
+.custom-shape-divider-top-1662344733 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1662344733 svg {
+  position: relative;
+  display: block;
+  width: calc(144% + 1.3px);
+  height: 47px;
+}
+
+.custom-shape-divider-top-1662344733 .shape-fill {
+  fill: #111827;
+}
+
+.custom-shape-divider-top-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-2 svg {
+  position: relative;
+  display: block;
+  width: calc(144% + 1.3px);
+  height: 70px;
+}
+
+.custom-shape-divider-top-2 .shape-fill {
+  fill: rgba(0, 0, 0, 0.689);
+}
+
+.custom-shape-divider-bottom-3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-3 svg {
+  position: relative;
+  display: block;
+  width: calc(144% + 1.3px);
+  height: 70px;
+}
+
+.custom-shape-divider-bottom-3 .shape-fill {
+  fill: rgba(0, 0, 0, 0.689);
+}
+
+.st0{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;width:10px;}
+	.st1{fill:#FFFFFF;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;width:10px;}
+	.st2{opacity:0.1;fill:#65C8D0;stroke:#000000;stroke-width:0.1;stroke-miterlimit:10;width:10px;}
+	.st3{fill:#65C8D0;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;width:10px;}
+
+@font-face {
+  font-family: "MoskMed";
+  src: local("MoskMedium500.ttf"), url("./fonts/MoskMedium500.ttf") format("truetype");
+}
+@font-face {
+  font-family: "NeonLight";
+  src: local("neonlight.otf"), url("./fonts/neonlight.otf") format("truetype");
+}
+@font-face {
+  font-family: "Abril";
+  src: local("Abril.ttf"), url("./fonts/Abril.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Jose";
+  src: local("Jose.ttf"), url("./fonts/Jose.ttf") format("truetype");
+}
