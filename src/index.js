@@ -13,8 +13,8 @@ export default function App() {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <CookiesProvider>
+  <React.StrictMode>
     <App />
-  </CookiesProvider>
+  </React.StrictMode>
 );
 
