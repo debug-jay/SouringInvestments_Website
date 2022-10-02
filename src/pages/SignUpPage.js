@@ -143,9 +143,7 @@ export class SignUpPage extends PureComponent {
     async MasterSignUp(){
         const post_url = 'https://ec2-34-201-91-232.compute-1.amazonaws.com:5001/api/userSignUp';
         const post = '/.netlify/functions/backend';
-        const headers = {
-          "Content-Type" : "application/json"
-        }
+
         try{
             console.log("running");
              await axios.post(post_url, {
