@@ -21,7 +21,6 @@ export class SignUpPage extends PureComponent {
             c_password: '',
             privatekey: '',
 
-            canProceed: '',
             emailCheck: new Boolean,
             usernameCheck: new Boolean,
             passCheck: new Boolean,
