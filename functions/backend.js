@@ -11,16 +11,31 @@ exports.handler = async (event, context) => {
         privatekey : event.body.privatekey
     }
 
+    let responseMessage;
+
     try{
-        const url = '';
+        const url = 'https://ec2-34-201-91-232.compute-1.amazonaws.com:5001/api/userSignUp';
+        await axios.post(url, {
+            firstname: data.firstname,
+            lastname: data.lastname
+        })
+        .then(function(response){
+            console.log(response.data);
+            responseMessage = response.data;
+        })
+        .catch(err=>{
+            console.log(err);
+            console.log(err.response);
+            console.log(err.request);
+        })
 
     }catch(e){
-        
+        console.log(e);
     }
     
     return{
         statusCode: 200,
-        body: JSON.stringify({data}),
+        body: JSON.stringify(responseMessage),
         
     }
 }
