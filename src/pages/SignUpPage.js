@@ -149,7 +149,9 @@ export class SignUpPage extends PureComponent {
               await axios.post(post_url,{
               firstname: this.state.firstname,
               lastname: this.state.lastname,
-              email: this.state.email
+              email: this.state.email,
+              username: this.state.username,
+              password: this.state.password
              })
              .then(function(response){
               console.log(response.data);
