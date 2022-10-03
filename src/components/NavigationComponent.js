@@ -3,7 +3,7 @@ import { Link, Outlet } from 'react-router-dom';
 
 export const NAVBAR = () =>
 {
-    const [show, setShow] = useState(true);
+    const [show, setShow] = useState(false);
 
     function showNavList(){
         setShow(!show);
@@ -33,7 +33,7 @@ export const NAVBAR = () =>
       </a>
       
     </div>
-    <span className="font-semibold text-2xl tracking-wider" id="comptext"><Link to="/">Souring</Link></span>
+    <span className="font-semibold text-2xl tracking-wider" id="comptext">Souring</span>
   </div>
   
   <div className='flex lg:hidden justify-end items-center'>
@@ -50,6 +50,30 @@ export const NAVBAR = () =>
   </div>
     </div>
 
+    {/** For Desktop */}
+    <div className="hidden bg-transparent w-full flex-grow lg:flex lg:items-center lg:w-auto  lg:backdrop-blur-none lg:border-none" id='nav-handler'>
+    <div className="text-md lg:flex-grow lg:flex justify-center items-center">
+      <a href="/#about" className="flex justify-center mt-5 lg:inline-block lg:mt-0 text-white hover:text-white lg:mr-14">
+        About Us
+      </a>
+      <a href="/#teams" className="flex justify-center mt-6 lg:inline-block lg:mt-0 text-white hover:text-white lg:mr-14">
+        Our Teams
+      </a>
+      <a href="/#journey" className="flex justify-center mt-6 lg:inline-block lg:mt-0 text-white hover:text-white ">
+        The Journey
+      </a>
+    </div>
+    <div className='lg:mr-5 sm:hidden'>
+      <Link to="/signup" className="mb-5 lg:mb-0 flex justify-center items-center text-sm px-4 py-2 leading-none mobile:mr-5 mobile:ml-5 border border-blue-500 rounded-md text-white hover:border-transparent hover:text-teal-500 hover:bg-black hover:bg-opacity-30 mt-4 lg:mt-0">Sign Up</Link>
+    </div>
+    <div className='lg:mr-5 sm:hidden'>
+        <Link to="/login" className="mb-5 lg:mb-0 flex justify-center items-center text-sm px-4 py-2 leading-none mobile:mr-5 mobile:ml-5 border border-white rounded-md text-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Login</Link>
+    </div>
+
+    <br/>
+  </div>
+
+  {/** For Mobile */}
   {show?
     <div className=" bg-transparent w-full block flex-grow lg:flex lg:items-center lg:w-auto  lg:backdrop-blur-none lg:border-none" id='nav-handler'>
     <div className="text-md lg:flex-grow lg:flex justify-center items-center">
