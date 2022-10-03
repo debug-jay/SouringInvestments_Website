@@ -1,5 +1,4 @@
 import axios from 'axios';
-const fetch = require('node-fetch');
 
 exports.handler = async (event, context) => {
     
