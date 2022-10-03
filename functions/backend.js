@@ -13,11 +13,11 @@ exports.handler = async (event, context) => {
 
     let responseMessage;
 
-    try{
+    
         const url = 'https://ec2-34-201-91-232.compute-1.amazonaws.com:5001/api/userSignUp';
         await axios.post(url, {
-            firstname: data.firstname,
-            lastname: data.lastname
+            firstname: 'jaydin',
+            lastname: 'gulley'
         })
         .then(function(response){
             console.log(response.data);
@@ -29,9 +29,7 @@ exports.handler = async (event, context) => {
             console.log(err.request);
         })
 
-    }catch(e){
-        console.log(e);
-    }
+    
     
     return{
         statusCode: 200,
