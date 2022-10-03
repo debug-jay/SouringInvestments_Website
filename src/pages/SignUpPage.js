@@ -146,7 +146,7 @@ export class SignUpPage extends PureComponent {
 
         try{
             console.log("running");
-             await axios.get(post,)
+             await axios.get(post_url,)
             .then(function(response){
                 console.log(response.data);
             })
