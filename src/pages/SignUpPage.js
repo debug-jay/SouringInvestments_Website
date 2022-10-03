@@ -2,11 +2,6 @@ import React, {PureComponent} from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
-// serverless functions
-export var obj = {
-  table: []
-};
-
 export class SignUpPage extends PureComponent {
 
     constructor(props){
