@@ -10,10 +10,10 @@ exports.handler = async (event, context) => {
         password : event.body.password,
         privatekey : event.body.privatekey
     }
+    const url = 'https://ec2-34-201-91-232.compute-1.amazonaws.com:5001/api/userSignUp';
 
     let responseMessage;
     MasterSignUp = async() =>{
-        const url = 'https://ec2-34-201-91-232.compute-1.amazonaws.com:5001/api/userSignUp';
         await axios.post(url, {
             firstname: 'jaydin',
             lastname: 'gulley'
@@ -28,8 +28,19 @@ exports.handler = async (event, context) => {
             console.log(err.request);
         })
     }
+
+    await fetch(url, {
+        method: 'post',
+        mode: 'cors',
+        data: {
+            firstname: 'jaydin'
+        }
+    })
+    .then(function(res){
+        responseMessage = res.data;
+    })
     
-    MasterSignUp();
+    
 
     return{
         statusCode: 200,
