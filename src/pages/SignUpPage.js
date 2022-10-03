@@ -193,11 +193,11 @@ export class SignUpPage extends PureComponent {
   }
 
   // Checks if Required Variables are True, if so Run the Send Login Function
-  checkCreds = () => {
+  async checkCreds() {
     if(this.state.emailCheck && this.state.usernameCheck && this.state.passCheck && this.state.secondpassCheck)
     {
       console.log("Can Proceed");
-      this.sendLogin();
+      await this.sendLogin();
     }
     else{
       console.log("Cant Proceed");
