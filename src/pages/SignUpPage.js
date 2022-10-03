@@ -146,16 +146,15 @@ export class SignUpPage extends PureComponent {
 
         try{
             console.log("running");
-            //  await axios.post('https://bdrfef3yols5u2hpsujl7542xa0jhxvn.lambda-url.us-east-1.on.aws/api/testPost',{
-            //   firstname: this.state.firstname,
-            //   lastname: this.state.lastname,
-            //   email: this.state.email
-            //  }
-            //  )
-            await axios.get('https://bdrfef3yols5u2hpsujl7542xa0jhxvn.lambda-url.us-east-1.on.aws/api/test')
-            .then(function(response){
-                console.log(response.data);
-            })
+             await axios.post('https://bdrfef3yols5u2hpsujl7542xa0jhxvn.lambda-url.us-east-1.on.aws/api/testPost',{
+              firstname: this.state.firstname,
+              lastname: this.state.lastname,
+              email: this.state.email
+             })
+            // await axios.get('https://bdrfef3yols5u2hpsujl7542xa0jhxvn.lambda-url.us-east-1.on.aws/api/test')
+            // .then(function(response){
+            //     console.log(response.data);
+            // })
             .catch(err=>{
               console.log(err);
               console.log(err.response);
