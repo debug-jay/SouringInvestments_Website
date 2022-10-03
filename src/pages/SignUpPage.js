@@ -197,7 +197,7 @@ export class SignUpPage extends PureComponent {
     if(this.state.emailCheck && this.state.usernameCheck && this.state.passCheck && this.state.secondpassCheck)
     {
       console.log("Can Proceed");
-      ()=>this.sendLogin();
+      this.sendLogin();
     }
     else{
       console.log("Cant Proceed");
