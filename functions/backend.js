@@ -1,4 +1,5 @@
 import axios from 'axios';
+const fetch = require('node-fetch');
 
 exports.handler = async (event, context) => {
     
@@ -29,16 +30,16 @@ exports.handler = async (event, context) => {
         })
     }
 
-    // await fetch(url, {
-    //     method: 'post',
-    //     mode: 'cors',
-    //     data: {
-    //         firstname: 'jaydin'
-    //     }
-    // })
-    // .then(function(res){
-    //     responseMessage = res.data;
-    // })
+    await fetch(url, {
+        method: 'post',
+        mode: 'cors',
+        data: {
+            firstname: 'jaydin'
+        }
+    })
+    .then(function(res){
+        responseMessage = res.data;
+    })
     
     
 
