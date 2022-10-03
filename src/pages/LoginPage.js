@@ -33,7 +33,7 @@ export class LoginPage extends PureComponent {
 
 		<div class="text-center mt-6">
 				<button class="py-3 w-64 text-xl text-white bg-blue-400 rounded-2xl">Create Account</button>
-				<p class="mt-4 text-sm">Don't Have an Account? <span class="underline cursor-pointer"> Sign Up</span>
+				<p class="mt-4 text-sm">Don't Have an Account? <span class="underline cursor-pointer"> <Link to="/signup">Sign Up</Link></span>
 				</p>
 		</div>
         
