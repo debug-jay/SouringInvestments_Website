@@ -24,7 +24,8 @@ export class SignUpPage extends PureComponent {
             canProceed: '',
             emailCheck: new Boolean,
             usernameCheck: new Boolean,
-            passCheck: new Boolean
+            passCheck: new Boolean,
+            secondpassCheck: new Boolean
         }
 
         this.textGreen = "text-green-400 text-xs mt-1";
@@ -132,12 +133,12 @@ export class SignUpPage extends PureComponent {
         {
           console.log("Passwords Match");
           document.getElementById("passwordscheck").className = this.textGreen;
-          this.state.passCheck = true;
+          this.state.secondpassCheck = true;
         }
         else{
           console.log("Passwords Dont Match");
           document.getElementById("passwordscheck").className = this.textGray;
-          this.state.passCheck = false;
+          this.state.secondpassCheck = false;
         }
     }
 
@@ -197,27 +198,12 @@ export class SignUpPage extends PureComponent {
     this.setState({error: _string});
   }
 
-  checkPasswords = (e) => {
-    e.preventDefault();
-    if(e.target.value == this.state.password)
-    {
-      console.log("Passwords Match");
-      document.getElementById("passwordscheck").className = this.textGreen;
-      this.state.passCheck = true;
-    }
-    else{
-      console.log("Passwords Dont Match");
-      document.getElementById("passwordscheck").className = this.textGray;
-      this.state.passCheck = false;
-    }
-  }
-
   // Checks if Required Variables are True, if so Run the Send Login Function
   checkCreds = () => {
-    if(this.state.emailCheck && this.state.usernameCheck && this.state.passCheck)
+    if(this.state.emailCheck && this.state.usernameCheck && this.state.passCheck && this.state.secondpassCheck)
     {
       console.log("Can Proceed");
-      this.sendLogin();
+      ()=>this.sendLogin();
     }
     else{
       console.log("Cant Proceed");
@@ -227,8 +213,6 @@ export class SignUpPage extends PureComponent {
     // Step 3 On Sign Up Click
     async sendLogin(){
         var post_url = 'https://7iv4ihz7dxtrbcq77fawwnogwi0kneik.lambda-url.us-east-1.on.aws/api/userSignUp';
-        if(this.state.canProceed == "true")
-        {
           try{
               console.log("running");
                 await axios.post(post_url,{
@@ -251,9 +235,6 @@ export class SignUpPage extends PureComponent {
           {
               console.log(e);
           }
-      }else{
-        
-      }
     }
 
     render(){
