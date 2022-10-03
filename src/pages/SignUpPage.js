@@ -200,7 +200,7 @@ export class SignUpPage extends PureComponent {
       await this.sendLogin();
     }
     else{
-      console.log("Cant Proceed");a
+      console.log("Cant Proceed");
     }
   }
 
