@@ -151,6 +151,9 @@ export class SignUpPage extends PureComponent {
               lastname: this.state.lastname,
               email: this.state.email
              })
+             .then(function(response){
+              console.log(response.data);
+             })
             // await axios.get('https://bdrfef3yols5u2hpsujl7542xa0jhxvn.lambda-url.us-east-1.on.aws/api/test')
             // .then(function(response){
             //     console.log(response.data);
