@@ -30,21 +30,26 @@ exports.handler = async (event, context) => {
         })
     }
 
-    await fetch(url, {
+    const response = await fetch(url, {
         method: 'post',
         mode: 'cors',
-        data: {
-            firstname: 'jaydin'
-        }
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
     })
-    .then(function(res){
-        responseMessage = res.data;
+    .then(res=>res.json())
+    .then(data=>{
+        console.log('successs:', data);
+    })
+    .catch(err=>{
+        console.log('error:', err);
     })
     
     
 
     return{
         statusCode: 200,
-        body: JSON.stringify(event.body)
+        body: JSON.stringify(response)
     }
 }
