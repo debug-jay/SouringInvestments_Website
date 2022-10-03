@@ -14,6 +14,7 @@ exports.handler = async (event, context) => {
     let responseMessage;
 
     
+    
         const url = 'https://ec2-34-201-91-232.compute-1.amazonaws.com:5001/api/userSignUp';
         axios.post(url, {
             firstname: 'jaydin',
@@ -33,7 +34,7 @@ exports.handler = async (event, context) => {
     
     return{
         statusCode: 200,
-        body: JSON.stringify(responseMessage),
+        body: JSON.stringify({responseMessage}),
         
     }
 }
