@@ -16,10 +16,10 @@ export class SignUpPage extends PureComponent {
             c_password: '',
             privatekey: '',
 
-            emailCheck: new Boolean,
-            usernameCheck: new Boolean,
-            passCheck: new Boolean,
-            secondpassCheck: new Boolean
+            emailCheck: false,
+            usernameCheck: false,
+            passCheck: false,
+            secondpassCheck: false
         }
 
         this.textGreen = "text-green-400 text-xs mt-1";
