@@ -4,12 +4,12 @@ const fetch = require('node-fetch');
 exports.handler = async (event, context) => {
     
     const data = {
-        firstname : event.body.firstname,
-        lastname : event.body.firstname,
-        email : event.body.email,
-        username : event.body.username,
-        password : event.body.password,
-        privatekey : event.body.privatekey
+        firstname : 'event.body.firstname',
+        lastname : 'event.body.firstname',
+        email : 'event.body.email',
+        username : 'event.body.username',
+        password : 'event.body.password',
+        privatekey : 'event.body.privatekey'
     }
     const url = 'https://ec2-34-201-91-232.compute-1.amazonaws.com:5001/api/userSignUp';
 
