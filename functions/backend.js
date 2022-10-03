@@ -30,7 +30,7 @@ exports.handler = async (event, context) => {
         })
     }
 
-    const response = await fetch(url, {
+    await fetch(url, {
         method: 'post',
         mode: 'cors',
         headers: {
