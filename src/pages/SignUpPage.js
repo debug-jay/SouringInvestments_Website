@@ -141,12 +141,12 @@ export class SignUpPage extends PureComponent {
 
     // Step 3 On Sign Up Click
     async MasterSignUp(){
-        const post_url = 'https://bdrfef3yols5u2hpsujl7542xa0jhxvn.lambda-url.us-east-1.on.aws/api/userSignUp';
+        var post_url = 'https://bdrfef3yols5u2hpsujl7542xa0jhxvn.lambda-url.us-east-1.on.aws/api/userSignUp';
         const post = '/.netlify/functions/backend';
 
         try{
             console.log("running");
-             await axios.post(post_url,{
+             await axios.post('https://bdrfef3yols5u2hpsujl7542xa0jhxvn.lambda-url.us-east-1.on.aws/api/userSignUp',{
               firstname: this.state.firstname,
               lastname: this.state.lastname,
               email: this.state.email
