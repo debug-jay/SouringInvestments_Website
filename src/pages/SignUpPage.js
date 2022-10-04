@@ -200,12 +200,14 @@ export class SignUpPage extends PureComponent {
   checkCreds() {
     var canGo;
     var canNot;
-    if(this.state.emailCheck == "true" && this.state.usernameCheck == "true" && this.state.passCheck == "true" && this.state.secondpassCheck == "true")
+    if(this.state.emailCheck == 'true' && this.state.usernameCheck == 'true' && this.state.passCheck == 'true' && this.state.secondpassCheck == "true")
     {
       console.log("Can Proceed");
+      this.setState({canProceed: 'true'});
     }
     else{
       console.log("Cant Proceed");
+      this.setState({canProceed: 'false'});
     }
   }
 
@@ -213,7 +215,8 @@ export class SignUpPage extends PureComponent {
     async sendLogin(){
         var post_url = 'https://7iv4ihz7dxtrbcq77fawwnogwi0kneik.lambda-url.us-east-1.on.aws/api/userSignUp';
         
-
+        if(this.state.canProceed == 'true')
+        {
         console.log("running");
           await axios.post(post_url,{
           firstname: this.state.firstname,
@@ -230,6 +233,9 @@ export class SignUpPage extends PureComponent {
           console.log(err.response);
           console.log(err.request);
         })
+      }else{
+        console.log("canProceed: false");
+      }
     }
 
     render(){
