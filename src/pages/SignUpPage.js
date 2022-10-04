@@ -16,10 +16,10 @@ export class SignUpPage extends PureComponent {
             c_password: '',
             privatekey: '',
 
-            emailCheck: new Boolean,
-            usernameCheck: new Boolean,
-            passCheck: new Boolean,
-            secondpassCheck: new Boolean
+            emailCheck: '',
+            usernameCheck: '',
+            passCheck: '',
+            secondpassCheck: ''
         }
 
         this.textGreen = "text-green-400 text-xs mt-1";
@@ -44,7 +44,7 @@ export class SignUpPage extends PureComponent {
         {
           console.log("Valid Email");
           document.getElementById("emailcheck").className = this.textGreen;
-          this.setState({emailCheck: true});
+          this.setState({emailCheck: "true"});
         }
         else{
           console.log("Please Provide a Valid Email Address");
@@ -117,7 +117,7 @@ export class SignUpPage extends PureComponent {
         }
         if(passlength && passnum && passcap && passspec)
         {
-          this.setState({passCheck: true});
+          this.setState({passCheck: "true"});
         }
     }
 
@@ -127,12 +127,12 @@ export class SignUpPage extends PureComponent {
         {
           console.log("Passwords Match");
           document.getElementById("passwordscheck").className = this.textGreen;
-          this.setState({secondpassCheck: true});
+          this.setState({secondpassCheck: "true"});
         }
         else{
           console.log("Passwords Dont Match");
           document.getElementById("passwordscheck").className = this.textGray;
-          this.setState({secondpassCheck: false});
+          this.setState({secondpassCheck: "false"});
         }
     }
 
@@ -194,7 +194,7 @@ export class SignUpPage extends PureComponent {
 
   // Checks if Required Variables are True, if so Run the Send Login Function
   checkCreds() {
-    if(this.state.emailCheck == true && this.state.usernameCheck == true && this.state.passCheck == true && this.state.secondpassCheck == true)
+    if(this.state.emailCheck == "true" && this.state.usernameCheck == "true" && this.state.passCheck == "true" && this.state.secondpassCheck == "true")
     {
       console.log("Can Proceed");
       this.sendLogin();
@@ -283,7 +283,7 @@ export class SignUpPage extends PureComponent {
     <label for="default-checkbox" class="ml-2 text-sm font-medium text-black text-opacity-60">I Accept The <Link to="/privacy" className="underline">Privacy Policy</Link> & <Link to="/tos" className="underline"> Terms and Conditions</Link></label>
 </div>
 		<div class="text-center mt-6">
-				<button type="button" class="py-3 w-64 text-xl text-white bg-blue-400 rounded-2xl" onClick={()=>this.checkCreds()}>Create Account</button>
+				<button type="button" class="py-3 w-64 text-xl text-white bg-blue-400 rounded-2xl" onClick={this.checkCreds}>Create Account</button>
 				<p class="mt-4 text-sm">Already Have An Account? <span class="underline cursor-pointer"><Link to="/login"> Sign In</Link></span>
 				</p>
 		</div>
