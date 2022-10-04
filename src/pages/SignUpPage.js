@@ -44,12 +44,12 @@ export class SignUpPage extends PureComponent {
         {
           console.log("Valid Email");
           document.getElementById("emailcheck").className = this.textGreen;
-          this.state.emailCheck = true;
+          this.setState({emailCheck: true});
         }
         else{
           console.log("Please Provide a Valid Email Address");
           document.getElementById("emailcheck").className = this.textGray;
-          this.state.emailCheck = false;
+          this.setState({emailCheck: false});
         }
     }
 
@@ -117,7 +117,7 @@ export class SignUpPage extends PureComponent {
         }
         if(passlength && passnum && passcap && passspec)
         {
-          this.state.passCheck = true;
+          this.setState({passCheck: true});
         }
     }
 
@@ -127,12 +127,12 @@ export class SignUpPage extends PureComponent {
         {
           console.log("Passwords Match");
           document.getElementById("passwordscheck").className = this.textGreen;
-          this.state.secondpassCheck = true;
+          this.setState({secondpassCheck: true});
         }
         else{
           console.log("Passwords Dont Match");
           document.getElementById("passwordscheck").className = this.textGray;
-          this.state.secondpassCheck = false;
+          this.setState({secondpassCheck: false});
         }
     }
 
