@@ -51,7 +51,7 @@ export class SignUpPage extends PureComponent {
         else{
           console.log("Please Provide a Valid Email Address");
           document.getElementById("emailcheck").className = this.textGray;
-          this.setState({emailCheck: false});
+          this.setState({emailCheck: "false"});
         }
     }
 
@@ -119,7 +119,7 @@ export class SignUpPage extends PureComponent {
         }
         if(passlength && passnum && passcap && passspec)
         {
-          this.setState({passCheck: "true"});
+          this.setState({passCheck: 'true'});
         }
     }
 
@@ -131,12 +131,12 @@ export class SignUpPage extends PureComponent {
         {
           console.log("Passwords Match");
           document.getElementById("passwordscheck").className = this.textGreen;
-          this.setState({secondpassCheck: "true"});
+          this.setState({secondpassCheck: 'true'});
         }
         else{
           console.log("Passwords Dont Match");
           document.getElementById("passwordscheck").className = this.textGray;
-          this.setState({secondpassCheck: "false"});
+          this.setState({secondpassCheck: 'false'});
         }
     }
 
