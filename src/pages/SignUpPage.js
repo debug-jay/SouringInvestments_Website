@@ -127,7 +127,7 @@ export class SignUpPage extends PureComponent {
         e.preventDefault();
         this.setState({c_password: e.target.value});
 
-        if(this.state.c_password == this.state.password)
+        if(e.target.value == this.state.password)
         {
           console.log("Passwords Match");
           document.getElementById("passwordscheck").className = this.textGreen;
