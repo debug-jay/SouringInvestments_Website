@@ -283,7 +283,7 @@ export class SignUpPage extends PureComponent {
     <label for="default-checkbox" class="ml-2 text-sm font-medium text-black text-opacity-60">I Accept The <Link to="/privacy" className="underline">Privacy Policy</Link> & <Link to="/tos" className="underline"> Terms and Conditions</Link></label>
 </div>
 		<div class="text-center mt-6">
-				<button type="button" class="py-3 w-64 text-xl text-white bg-blue-400 rounded-2xl" onClick={this.checkCreds}>Create Account</button>
+				<button type="button" class="py-3 w-64 text-xl text-white bg-blue-400 rounded-2xl" onClick={this.checkCreds()}>Create Account</button>
 				<p class="mt-4 text-sm">Already Have An Account? <span class="underline cursor-pointer"><Link to="/login"> Sign In</Link></span>
 				</p>
 		</div>
