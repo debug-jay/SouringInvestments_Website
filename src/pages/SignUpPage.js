@@ -19,7 +19,9 @@ export class SignUpPage extends PureComponent {
             emailCheck: '',
             usernameCheck: '',
             passCheck: '',
-            secondpassCheck: ''
+            secondpassCheck: '',
+
+            canProceed: ''
         }
 
         this.textGreen = "text-green-400 text-xs mt-1";
@@ -123,7 +125,9 @@ export class SignUpPage extends PureComponent {
 
     update_c_Password = (e) =>{
         e.preventDefault();
-        if(e.target.value == this.state.password)
+        this.setState({c_password: e.target.value});
+
+        if(this.state.c_password == this.state.password)
         {
           console.log("Passwords Match");
           document.getElementById("passwordscheck").className = this.textGreen;
@@ -194,10 +198,11 @@ export class SignUpPage extends PureComponent {
 
   // Checks if Required Variables are True, if so Run the Send Login Function
   checkCreds() {
+    var canGo;
+    var canNot;
     if(this.state.emailCheck == "true" && this.state.usernameCheck == "true" && this.state.passCheck == "true" && this.state.secondpassCheck == "true")
     {
       console.log("Can Proceed");
-      this.sendLogin();
     }
     else{
       console.log("Cant Proceed");
@@ -207,28 +212,24 @@ export class SignUpPage extends PureComponent {
     // Step 3 On Sign Up Click
     async sendLogin(){
         var post_url = 'https://7iv4ihz7dxtrbcq77fawwnogwi0kneik.lambda-url.us-east-1.on.aws/api/userSignUp';
-          try{
-              console.log("running");
-                await axios.post(post_url,{
-                firstname: this.state.firstname,
-                lastname: this.state.lastname,
-                email: this.state.email,
-                username: this.state.username,
-                password: this.state.password
-              })
-              .then(function(response){
-                console.log(response.data);
-              })
-              .catch(err=>{
-                console.log(err);
-                console.log(err.response);
-                console.log(err.request);
-              })
-              
-          }catch(e)
-          {
-              console.log(e);
-          }
+        
+
+        console.log("running");
+          await axios.post(post_url,{
+          firstname: this.state.firstname,
+          lastname: this.state.lastname,
+          email: this.state.email,
+          username: this.state.username,
+          password: this.state.password
+        })
+        .then(function(response){
+          console.log(response.data);
+        })
+        .catch(err=>{
+          console.log(err);
+          console.log(err.response);
+          console.log(err.request);
+        })
     }
 
     render(){
