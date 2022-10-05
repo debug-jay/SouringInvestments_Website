@@ -42,18 +42,25 @@ export class SignUpPage extends PureComponent {
     updateEmail = (e) =>{
         e.preventDefault();
         this.setState({email: e.target.value});
-        if(e.target.value.includes("@gmail.com") || e.target.value.includes("@yahoo.com") || e.target.value.includes("@hotmail.com") || e.target.value.includes("@outlook.com"))
+        // if(e.target.value.includes("@gmail.com") || e.target.value.includes("@yahoo.com") || e.target.value.includes("@hotmail.com") || e.target.value.includes("@outlook.com"))
+        // {
+        //   console.log("Valid Email");
+        //   document.getElementById("emailcheck").className = this.textGreen;
+        //   this.state.emailCheck = true;
+        // }
+        // else{
+        //   console.log("Please Provide a Valid Email Address");
+        //   document.getElementById("emailcheck").className = this.textGray;
+        //   this.state.emailCheck = false;
+        // }
+        var eCheck = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        if(eCheck.test(this.state.email))
         {
-          console.log("Valid Email");
-          document.getElementById("emailcheck").className = this.textGreen;
           this.state.emailCheck = true;
-        }
-        else{
-          console.log("Please Provide a Valid Email Address");
-          document.getElementById("emailcheck").className = this.textGray;
+        }else{
           this.state.emailCheck = false;
         }
-    }
+      }
 
     updateUsername = (e) =>{
         e.preventDefault();
@@ -220,7 +227,8 @@ export class SignUpPage extends PureComponent {
           lastname: this.state.lastname,
           email: this.state.email,
           username: this.state.username,
-          password: this.state.password
+          password: this.state.password,
+          privatekey: this.state.privatekey
         })
         .then(function(response){
           console.log(response.data);
@@ -234,7 +242,6 @@ export class SignUpPage extends PureComponent {
     }
 
     render(){
-        console.log(this.state.firstname + " " + this.state.lastname);
     return(
         <div class=" bg-gray-800 flex justify-center items-center">
 	<div class="absolute w-60 h-60 rounded-xl bg-blue-300 -top-5 -left-16 z-0 transform rotate-45 hidden md:block">
