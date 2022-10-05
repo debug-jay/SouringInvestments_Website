@@ -56,8 +56,12 @@ export class SignUpPage extends PureComponent {
         var emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         if(this.state.email.match(emailFormat))
         {
+          console.log("Valid Email");
+          document.getElementById("emailcheck").className = this.textGreen;
           this.state.emailCheck = true;
         }else{
+          console.log("Please Provide a Valid Email Address");
+          document.getElementById("emailcheck").className = this.textGray;
           this.state.emailCheck = false;
         }
       }
