@@ -53,7 +53,7 @@ export class SignUpPage extends PureComponent {
         //   document.getElementById("emailcheck").className = this.textGray;
         //   this.state.emailCheck = false;
         // }
-        var eCheck = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        var eCheck = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         if(eCheck.test(this.state.email))
         {
           this.state.emailCheck = true;
